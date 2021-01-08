@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "722296202992",
+    "firebase_url": "https://ourchurras-64108-default-rtdb.firebaseio.com",
+    "project_id": "ourchurras-64108",
+    "storage_bucket": "ourchurras-64108.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722296202992:android:1912fbba9375536fabc435",
+        "android_client_info": {
+          "package_name": "com.projeto.ourchurras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722296202992-48k14fjej3flnphoqgmoe39flq60tvif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.projeto.ourchurras",
+            "certificate_hash": "482613053f49a238a730b0b4a2e20203f5ba579a"
+          }
+        },
+        {
+          "client_id": "722296202992-4gosm8pvl03gdt63o9o6k76gfr75c9kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9zIB4secG7sgEP39ZQKCxqTWjGtRbFtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722296202992-4gosm8pvl03gdt63o9o6k76gfr75c9kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

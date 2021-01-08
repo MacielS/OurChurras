@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Primary">#D3AD00</color>
+    <color name="Secondary">#FF0D0D</color>
+    <color name="barrinha">#B38600</color>
+
+
+    <color name="background">#FED000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Mostarda">#C6A200</color>
+</resources>

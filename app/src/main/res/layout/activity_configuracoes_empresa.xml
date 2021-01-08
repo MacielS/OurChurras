@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ConfiguracoesEmpresaActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagePerfilEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/perfil" />
+
+        <EditText
+            android:id="@+id/editProdutoNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Empresa"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editProdutoDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Serviços"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editEmpresaTempo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Tempo de serviço"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editProdutoPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Valor"
+            android:inputType="numberDecimal"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/buttonAcesso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="validarDadosEmpresa"
+            android:padding="16dp"
+            android:text="Salvar"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
