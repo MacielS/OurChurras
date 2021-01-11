@@ -80,7 +80,7 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
     }
     private void recuperarDadosEmpresa() {
        DatabaseReference empresaRef = firebaseRef
-               .child("empresas")
+               .child("churrasqueiros")
                .child(idUsuarioLogado);
        empresaRef.addValueEventListener(new ValueEventListener() {
            @Override
@@ -180,7 +180,7 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
 
                     final StorageReference imagemRef = storageReference
                             .child("imagens")
-                            .child("empresas")
+                            .child("churrasqueiros")
                             .child(idUsuarioLogado + "jpeg");
 
                     //Retorna objeto que irá controlar o upload

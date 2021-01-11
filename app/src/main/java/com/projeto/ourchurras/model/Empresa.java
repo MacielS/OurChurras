@@ -20,7 +20,8 @@ public class Empresa implements Serializable {
     public void salvar() {
 
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
-        DatabaseReference empresaRef = firebaseRef.child("empresas")
+        DatabaseReference empresaRef = firebaseRef
+                .child("churrasqueiros")
                 .child(getIdUsuario() );
         empresaRef.setValue(this);
     }

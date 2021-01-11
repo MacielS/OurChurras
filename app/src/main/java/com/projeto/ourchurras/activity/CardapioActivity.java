@@ -49,7 +49,7 @@ public class CardapioActivity extends AppCompatActivity {
         //Recupera empresa selecionada
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            empresaSelecionada = (Empresa) bundle.getSerializable("empresa");
+            empresaSelecionada = (Empresa) bundle.getSerializable("churrasqueiros");
 
             textNomeEmpresaCardapio.setText(empresaSelecionada.getNome() );
             idEmpresa = empresaSelecionada.getIdUsuario();

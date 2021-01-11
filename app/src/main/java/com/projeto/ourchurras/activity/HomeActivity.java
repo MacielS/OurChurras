@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         recuperarEmpresas();
 
         //Configuração do search view
-        searchView.setHint("Pesquisar restaurantes");
+        searchView.setHint("Pesquisar churrasqueiros");
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
 
                                 Empresa empresaSelecionada = empresas.get(position);
                                 Intent i = new Intent(HomeActivity.this, CardapioActivity.class);
-                                i.putExtra("empresa", empresaSelecionada);
+                                i.putExtra("churrasqueiros", empresaSelecionada);
                                 startActivity(i);
                             }
 
@@ -108,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void pesquisarEmpresas(String pesquisa){
         DatabaseReference empresasRef = firebaseRef
-                .child("empresas");
+                .child("churrasqueiros");
         Query query = empresasRef.orderByChild("nome")
                 .startAt(pesquisa)
                 .endAt(pesquisa + "\uf8ff");
@@ -133,7 +133,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void recuperarEmpresas() {
-        DatabaseReference empresaRef = firebaseRef.child("empresas");
+        DatabaseReference empresaRef = firebaseRef.child("churrasqueiros");
         empresaRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

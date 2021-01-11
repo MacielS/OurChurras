@@ -52,7 +52,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
         //Configurações Toolbar
        Toolbar toolbar = findViewById(R.id.toolbar);
-       toolbar.setTitle("Ourchurras - Empresa");
+       toolbar.setTitle("Ourchurras - Churrasqueiros");
        setSupportActionBar(toolbar);
 
        //Configurações recyclerView
