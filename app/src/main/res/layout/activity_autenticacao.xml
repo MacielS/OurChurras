@@ -72,7 +72,7 @@
 
         <TextView
             android:id="@+id/textCadastrar"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="Cadastrar"
             android:textColor="@color/black" />
@@ -108,9 +108,9 @@
 
         <TextView
             android:id="@+id/textEmpresa"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="Empresa"
+            android:text="Churrasqueiro"
             android:textColor="@color/black" />
     </LinearLayout>
 
