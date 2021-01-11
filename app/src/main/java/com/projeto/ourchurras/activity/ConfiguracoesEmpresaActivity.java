@@ -35,8 +35,8 @@ import java.io.ByteArrayOutputStream;
 
 public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
 
-    private EditText editEmpresaNome, editEmpresaServicos,
-                     editEmpresaTempo, editEmpresaValor;
+    private EditText editEmpresaNome, editEmpresaServicos, editEmpresaCpf
+                     , editEmpresaTelefone, editEmpresaTempo, editEmpresaValor;
     private ImageView imagePerfilEmpresa;
 
     private static final int SELECAO_GALERIA = 200;
@@ -89,6 +89,8 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
                if (dataSnapshot.getValue() != null) {
                    Empresa empresa = dataSnapshot.getValue(Empresa.class);
                    editEmpresaNome.setText(empresa.getNome() );
+                   editEmpresaTelefone.setText(empresa.getTelefone() );
+                   editEmpresaCpf.setText(empresa.getCpf() );
                    editEmpresaServicos.setText(empresa.getServicos() );
                    editEmpresaValor.setText(empresa.getPrecoServico().toString() );
                    editEmpresaTempo.setText(empresa.getTempo() );
@@ -113,18 +115,24 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
 
         //Valida se os campos foram preenchidos
         String nome = editEmpresaNome.getText().toString();
+        String telefone = editEmpresaTelefone.getText().toString();
+        String cpf = editEmpresaCpf.getText().toString();
         String valor = editEmpresaValor.getText().toString();
         String servicos = editEmpresaServicos.getText().toString();
         String tempo = editEmpresaTempo.getText().toString();
 
         if (!nome.isEmpty()) {
-            if (!valor.isEmpty()) {
-                if (!servicos.isEmpty()) {
-                    if (!tempo.isEmpty()) {
+            if (!telefone.isEmpty()) {
+                if (!cpf.isEmpty()) {
+                     if (!valor.isEmpty()) {
+                        if (!servicos.isEmpty()) {
+                           if (!tempo.isEmpty()) {
 
                         Empresa empresa = new Empresa();
                         empresa.setIdUsuario(idUsuarioLogado);
                         empresa.setNome(nome);
+                        empresa.setTelefone(telefone);
+                        empresa.setCpf(cpf);
                         empresa.setPrecoServico(Double.parseDouble(valor));
                         empresa.setServicos(servicos);
                         empresa.setTempo(tempo);
@@ -132,14 +140,20 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
                         empresa.salvar();
                         finish();
 
-                    }else{
-                        exibirMensagem("Digite o tempo de serviço");
-                    }
-                }else{
-                    exibirMensagem("Digite os serviços prestados");
-                }
-            }else{
+                             }else{
+                                exibirMensagem("Digite o tempo de serviço");
+                             }
+                        }else{
+                            exibirMensagem("Digite os serviços prestados");
+                        }
+                   }else{
                 exibirMensagem("Digite um valor a ser cobrado");
+                   }
+                }else{
+                    exibirMensagem("Digite o CPF");
+                }
+            }else {
+                exibirMensagem("Digite um telefone de contato");
             }
         }else{
             exibirMensagem("Digite um nome para a empresa");
@@ -224,6 +238,8 @@ public class ConfiguracoesEmpresaActivity extends AppCompatActivity {
 
     private void inicializarComponentes() {
         editEmpresaNome = findViewById(R.id.editProdutoNome);
+        editEmpresaTelefone = findViewById(R.id.editUsuarioTelefone);
+        editEmpresaCpf = findViewById(R.id.editUsuarioCpf);
         editEmpresaServicos = findViewById(R.id.editProdutoDescricao);
         editEmpresaValor = findViewById(R.id.editProdutoPreco);
         editEmpresaTempo = findViewById(R.id.editEmpresaTempo);

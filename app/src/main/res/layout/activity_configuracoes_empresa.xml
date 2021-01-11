@@ -36,8 +36,36 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
-            android:hint="Empresa"
+            android:hint="Profissional"
             android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editEmpresaTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Telefone"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/Mostarda"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editEmpresaCpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="CPF"
+            android:inputType="number"
             android:padding="16dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/Mostarda"

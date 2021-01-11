@@ -8,11 +8,13 @@ import java.io.Serializable;
 public class Empresa implements Serializable {
 
     private String idUsuario;
-    private String urlImagem;
     private String nome;
+    private String telefone;
+    private String cpf;
     private String tempo;
     private String servicos;
     private Double precoServico;
+    private String urlImagem;
 
     public Empresa() {
     }
@@ -58,9 +60,7 @@ public class Empresa implements Serializable {
         this.tempo = tempo;
     }
 
-    public String getServicos() {
-        return servicos;
-    }
+    public String getServicos() { return servicos; }
 
     public void setServicos(String servicos) {
         this.servicos = servicos;
@@ -72,5 +72,21 @@ public class Empresa implements Serializable {
 
     public void setPrecoServico(Double precoServico) {
         this.precoServico = precoServico;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
