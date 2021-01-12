@@ -3,6 +3,7 @@ package com.projeto.ourchurras.model;
 import com.google.firebase.database.DatabaseReference;
 import com.projeto.ourchurras.helper.ConfiguracaoFirebase;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Pedido {
@@ -63,6 +64,18 @@ public class Pedido {
                 .child(getIdPedido());
         pedidoRef.setValue(this);
     }
+
+    public void atualizarStatus() {
+
+        HashMap<String, Object> status = new HashMap<>();
+        status.put("status", getStatus() );
+
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
+        DatabaseReference pedidoRef = firebaseRef
+                .child("pedidos")
+                .child(getIdChurrasqueiro())
+                .child(getIdPedido());
+        pedidoRef.updateChildren(status);    }
 
     public String getIdUsuario() {
         return idUsuario;
