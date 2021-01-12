@@ -44,11 +44,11 @@ public class PedidosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
-        idEmpresa = UsuarioFirebase.getIdUsuario();
 
         //Configurações iniciais
         inicializarComponentes();
         firebaseRef = ConfiguracaoFirebase.getFirebase();
+        idEmpresa = UsuarioFirebase.getIdUsuario();
 
         //Configuração Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);

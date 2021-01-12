@@ -15,10 +15,6 @@ import com.projeto.ourchurras.model.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jamiltondamasceno
- */
-
 public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHolder> {
 
     private List<Pedido> pedidos;
