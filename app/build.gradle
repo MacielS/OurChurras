@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.projeto.ourchurras"
@@ -40,11 +40,16 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
     /*Firebase*/
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
     implementation 'com.google.firebase:firebase-core:18.0.0'
     implementation 'com.google.firebase:firebase-database:19.6.0'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
     implementation 'com.google.firebase:firebase-auth:20.0.1'
     implementation 'com.firebaseui:firebase-ui-storage:6.4.0'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    /*Dependência mascára de telefone*/
+    implementation 'com.github.santalu:mask-edittext:1.0.7'
 
     /*MaterialSearchView*/
      implementation 'com.miguelcatalan:materialsearchview:1.4.0'

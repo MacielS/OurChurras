@@ -1,5 +1,6 @@
 package com.projeto.ourchurras.activity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class CardapioActivity extends AppCompatActivity {
     private RecyclerView recyclerProdutosCardapio;
     private ImageView imageEmpresaCardapio;
     private TextView textNomeEmpresaCardapio;
+    private TextView textTelefoneChurrasqueiro;
     private Empresa empresaSelecionada;
     private AlertDialog dialog;
     private TextView textCarrinhoQtd, textCarrinhoTotal;
@@ -61,7 +63,7 @@ public class CardapioActivity extends AppCompatActivity {
     private Double totalCarrinho;
     private int metodoPagamento;
 
-
+    @SuppressLint("MissingSuperCall")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +79,8 @@ public class CardapioActivity extends AppCompatActivity {
         if (bundle != null) {
             empresaSelecionada = (Empresa) bundle.getSerializable("churrasqueiros");
 
-            textNomeEmpresaCardapio.setText(empresaSelecionada.getNome() );
+            textNomeEmpresaCardapio.setText(empresaSelecionada.getNome());
+            textTelefoneChurrasqueiro.setText(empresaSelecionada.getTelefone());
             idEmpresa = empresaSelecionada.getIdUsuario();
 
             String url = empresaSelecionada.getUrlImagem();
@@ -87,12 +90,14 @@ public class CardapioActivity extends AppCompatActivity {
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Cardápio");
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
 
         //Configurações recyclerView
-        recyclerProdutosCardapio.setLayoutManager(new LinearLayoutManager(this) );
+        recyclerProdutosCardapio.setLayoutManager(new LinearLayoutManager(this));
         recyclerProdutosCardapio.setHasFixedSize(true);
         adapterProduto = new AdapterProduto(produtos, this);
         recyclerProdutosCardapio.setAdapter(adapterProduto);
@@ -165,7 +170,7 @@ public class CardapioActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         builder.show();
 
-        builder.setNegativeButton("Canvelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -298,6 +303,7 @@ public class CardapioActivity extends AppCompatActivity {
         builder.setTitle("Selecione um método de pagamento");
         CharSequence[] itens = new CharSequence[] {
           "Dinheiro", "Máquina de cartão"
+
         };
         builder.setSingleChoiceItems(itens, -1, new DialogInterface.OnClickListener() {
             @Override
@@ -333,13 +339,16 @@ public class CardapioActivity extends AppCompatActivity {
         dialog.show();
     }
 
+
     private void inicializarComponentes() {
 
         recyclerProdutosCardapio = findViewById(R.id.recyclerProdutosCardapio);
         imageEmpresaCardapio = findViewById(R.id.imageEmpresaCardapio);
         textNomeEmpresaCardapio = findViewById(R.id.textNomeEmpresaCardapio);
-
+        textTelefoneChurrasqueiro = findViewById(R.id.textTelefoneChurrasqueiro);
         textCarrinhoQtd = findViewById(R.id.textCarrinhoQtd);
         textCarrinhoTotal = findViewById(R.id.textCarrinhoTotal);
+
     }
+
 }

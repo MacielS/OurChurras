@@ -43,7 +43,7 @@
             android:textColorHighlight="@color/Mostarda"
             android:textColorHint="@android:color/darker_gray" />
 
-        <EditText
+        <com.santalu.maskedittext.MaskEditText
             android:id="@+id/editEmpresaTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,9 +55,10 @@
             android:padding="16dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/Mostarda"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColorHint="@android:color/darker_gray"
+            app:met_mask="+## (##) #####-####"/>
 
-        <EditText
+        <com.santalu.maskedittext.MaskEditText
             android:id="@+id/editEmpresaCpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +70,8 @@
             android:padding="16dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/Mostarda"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColorHint="@android:color/darker_gray"
+            app:met_mask="###.###.###-##"/>
 
         <EditText
             android:id="@+id/editProdutoDescricao"

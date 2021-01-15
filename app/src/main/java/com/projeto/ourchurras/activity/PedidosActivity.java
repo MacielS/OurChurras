@@ -100,12 +100,13 @@ public class PedidosActivity extends AppCompatActivity {
                 .build();
         dialog.show();
 
+
         DatabaseReference pedidoRef = firebaseRef
                 .child("pedidos")
                 .child(idEmpresa);
 
         Query pedidoPesquisa = pedidoRef.orderByChild("status")
-                .equalTo("confirmado");
+                .equalTo("Confirmado");
 
         pedidoPesquisa.addValueEventListener(new ValueEventListener() {
             @Override
@@ -118,8 +119,11 @@ public class PedidosActivity extends AppCompatActivity {
                         pedidos.add(pedido);
                     }
                     adapterPedido.notifyDataSetChanged();
-                    dialog.dismiss();
+
                 }
+                dialog.dismiss();
+
+
             }
 
             @Override

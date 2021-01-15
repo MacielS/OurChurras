@@ -34,13 +34,14 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         Empresa empresa = empresas.get(i);
-        holder.nomeEmpresa.setText(empresa.getNome());
+        holder.nomeChurrasqueiro.setText(empresa.getNome());
         holder.categoria.setText(empresa.getServicos() + "");
+        holder.telefone.setText(empresa.getTelefone() + "");
 
         //Carregar imagem
         String urlImagem = empresa.getUrlImagem();
         if (urlImagem != null && !urlImagem.isEmpty() ){
-            Picasso.get().load( urlImagem ).into(holder.imagemEmpresa);
+            Picasso.get().load( urlImagem ).into(holder.imagemChurrasqueiro);
 
         }
 
@@ -53,18 +54,18 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imagemEmpresa;
-        TextView nomeEmpresa;
+        ImageView imagemChurrasqueiro;
+        TextView nomeChurrasqueiro;
         TextView categoria;
-        TextView valor;
+        TextView telefone;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            nomeEmpresa = itemView.findViewById(R.id.textNomeEmpresaCardapio);
-            categoria = itemView.findViewById(R.id.textCategoriaEmpresa);
-            valor = itemView.findViewById(R.id.textValorEmpresa);
-            imagemEmpresa = itemView.findViewById(R.id.imageEmpresaCardapio);
+            nomeChurrasqueiro = itemView.findViewById(R.id.textNomeChurrasqueiroCardapio);
+            categoria = itemView.findViewById(R.id.textCategoriaChurrasqueiro);
+            telefone = itemView.findViewById(R.id.textTelefoneChurrasqueiro);
+            imagemChurrasqueiro = itemView.findViewById(R.id.imageChurrasqueiroCardapio);
         }
     }
 }

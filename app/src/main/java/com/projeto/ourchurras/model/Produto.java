@@ -10,6 +10,7 @@ public class Produto {
     private String idProduto;
     private String descricao;
     private Double preco;
+    private String urlImagem;
 
     public Produto() {
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
@@ -59,6 +60,14 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 
     public String getDescricao() {
